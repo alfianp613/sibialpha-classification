@@ -71,14 +71,14 @@ def main():
     point_history_classifier = PointHistoryClassifier()
 
     # Read labels ###########################################################
-    with open('model/keypoint_classifier/keypoint_classifier_label.csv',
+    with open(r'D:\Kuliah\Tugas, PPT, Buku Kuliah\Semester 5\Data Mining II\Project\Code\mediapipe\model\keypoint_classifier\keypoint_classifier_label.csv',
               encoding='utf-8-sig') as f:
         keypoint_classifier_labels = csv.reader(f)
         keypoint_classifier_labels = [
             row[0] for row in keypoint_classifier_labels
         ]
     with open(
-            'model/point_history_classifier/point_history_classifier_label.csv',
+            r'D:\Kuliah\Tugas, PPT, Buku Kuliah\Semester 5\Data Mining II\Project\Code\mediapipe\model\point_history_classifier\point_history_classifier_label.csv',
             encoding='utf-8-sig') as f:
         point_history_classifier_labels = csv.reader(f)
         point_history_classifier_labels = [
@@ -116,7 +116,6 @@ def main():
 
         # Detection implementation #############################################################
         image = cv.cvtColor(image, cv.COLOR_BGR2RGB)
-
         image.flags.writeable = False
         results = hands.process(image)
         image.flags.writeable = True

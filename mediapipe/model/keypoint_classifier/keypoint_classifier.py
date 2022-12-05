@@ -2,12 +2,12 @@
 # -*- coding: utf-8 -*-
 import numpy as np
 import tensorflow as tf
-tf.config.experimental.list_physical_devices('GPU')
+# tf.config.experimental.list_physical_devices('GPU')
 
 class KeyPointClassifier(object):
     def __init__(
         self,
-        model_path='model/keypoint_classifier/keypoint_classifier.tflite',
+        model_path=r'D:\Kuliah\Tugas, PPT, Buku Kuliah\Semester 5\Data Mining II\Project\Code\mediapipe\model\keypoint_classifier\keypoint_classifier.tflite',
         num_threads=1,
     ):
         self.interpreter = tf.lite.Interpreter(model_path=model_path,
